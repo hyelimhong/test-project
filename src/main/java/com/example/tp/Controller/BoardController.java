@@ -32,7 +32,7 @@ public class BoardController {
     public String save(@ModelAttribute BoardDTO boardDTO) throws IOException {
         System.out.println("boardDTO = " + boardDTO);
         boardService.save(boardDTO);
-       return "paging";
+       return "redirect:/board/paging";
 
     }
 
@@ -90,14 +90,14 @@ public class BoardController {
     public String update(@ModelAttribute BoardDTO boardDTO, Model model) {
         BoardDTO board = boardService.update(boardDTO);
         model.addAttribute("board", board);
-        return "detail";
-//        return "redirect:/board/" + boardDTO.getId();
+//        return "redirect:detail";
+        return "redirect:/board/" + boardDTO.getId();
     }
 
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable Long id) {
         boardService.delete(id);
-        return "redirect:/board/";
+        return "redirect:/board/paging";
     }
 
     @GetMapping("/paging")
