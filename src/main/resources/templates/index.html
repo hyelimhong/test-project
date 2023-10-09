@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판</title>
+</head>
+<body>
+<div>
+    <!-- 글 작성 버튼 -->
+    <button onclick="navigateTo('/save')">글 작성</button>
+    <!-- 페이지네이션 목록 버튼 -->
+</div>
+<table>
+    <!-- 테이블 헤더 -->
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>날짜</th>
+        <th>조회수</th>
+    </tr>
+    <!-- 게시물 목록 -->
+    <tr th:each="board: ${boardList}">
+        <td th:text="${board.id}"></td>
+        <td><a th:href="@{|/board/${board.id}|page=*{boardList.number + 1}}" th:text="${board.boardTitle}"></a></td>
+        <td th:text="${board.boardWriter}"></td>
+        <td th:text="*{#temporals.format(board.boardCreatedTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
+        <td th:text="${board.boardHits}"></td>
+    </tr>
+
+</table>
+<!-- 페이지네이션 링크 -->
+<div>
+    <a th:href="@{/board/paging(page=1)}">First</a>
+    <a th:href="${boardList.hasPrevious} ? @{/board/paging(page=${boardList.number})} : '#'">Prev</a>
+    <span th:each="page: ${#numbers.sequence(boardList.first, boardList.last)}">
+        <a th:href="@{/board/paging(page=${page})}" th:text="${page}"></a>
+    </span>
+    <a th:href="${boardList.hasNext} ? @{/board/paging(page=${boardList.number + 2})} : '#'">Next</a>
+    <a th:href="@{/board/paging(page=${boardList.totalPages})}">Last</a>
+</div>
+</body>
+<script>
+    // 페이지 이동 함수
+    function navigateTo(path) {
+        location.href = path;
+    }
+</script>
+</html>
