@@ -1,0 +1,102 @@
+.header {
+    width: 100%;
+    height: 62px;
+    background-color: #D6E4FF;
+    position: fixed;
+    text-align: center;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 8;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    text-align: right;
+    height: 100%;
+    width: 60%;
+}
+
+dth {
+    margin-top: 5px;
+    border-bottom: 1px solid black;
+    padding: 4px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    font-weight: bold;
+}
+
+.header h1 {
+    font-weight: 800;
+    line-height: 60px;
+}
+
+li {
+    padding: 20px 10px 0;
+}
+
+.slide-menu {
+    margin-top: 62px;
+    width: 100%;
+    height: auto;
+}
+
+.loginbox {
+    width: 50%;
+}
+
+.login {
+    float: right;
+    margin-top: 5px;
+    width: 120px;
+    height: 100%;
+    margin-right: 30px;
+}
+.msg {
+    display: flex;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+}
+.choice {
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: normal;
+}
+
+a {
+    font-size: 12px;
+}
+
+b {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#title {
+    font-size: 19px;
+    font-weight: bold;
+    width: 100%;
+
+}
+
+.menu-slide {
+    float: left;
+}
+
+.box1 {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 9px 18px;
+    height: auto;
+    overflow: hidden;
+    margin-top: 30px;
+}
