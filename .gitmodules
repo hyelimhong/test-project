@@ -4,3 +4,6 @@
 [submodule "tf-module-b"]
 	path = tf-module-b
 	url = https://github.com/hyelimhong/tf-module-b.git
+[submodule "tf-module-c"]
+	path = tf-module-c
+	url = https://github.com/hyelimhong/tf-module-c.git
